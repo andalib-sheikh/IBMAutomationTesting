@@ -45,7 +45,7 @@ public class BasePage {
 		driver.manage().timeouts().pageLoadTimeout(Timeout.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(Timeout.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get("https://www.ibm.com/in-en/employment/");
-	}*
+	}*/
 	
 	public static void initialization() throws MalformedURLException
 	{
