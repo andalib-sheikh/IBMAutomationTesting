@@ -73,6 +73,10 @@ public class CareerPage extends BasePage{
 	@FindBy(xpath="//select[@id='country']")
 	WebElement inputPrimaryCountry;
 	
+	@FindBy(xpath="//p[contains(text(),'Automation')]")
+	WebElement pJobTitle;
+	
+	
 	
 	ElementUtil elementUtil;
 	public String text;
@@ -112,7 +116,13 @@ public class CareerPage extends BasePage{
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).perform();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//p[contains(text(),'Automation')]")).click();
+		try{
+			driver.findElement(By.xpath("//p[contains(text(),'Automation')]")).click();
+		}
+		catch(Exception e)
+		{
+			js.executeScript("arguments[0].click();",pJobTitle);
+		}
 		Thread.sleep(1000);
 		String mainWindowHandle = driver.getWindowHandle();
 		Set<String> windowHandles=driver.getWindowHandles();
