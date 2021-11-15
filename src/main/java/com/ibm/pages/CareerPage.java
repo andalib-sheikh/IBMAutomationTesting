@@ -140,7 +140,6 @@ public class CareerPage extends BasePage{
 	   select.selectByVisibleText(Experience);
 	   inputAreaOfInterest.sendKeys(JobCategory);
 	   action.sendKeys(Keys.ENTER).perform();
-	   JavascriptExecutor js = (JavascriptExecutor) driver;
 	   js.executeScript("arguments[0].scrollIntoView();", inputCommunitiesOfInterest);
        try 
        {
