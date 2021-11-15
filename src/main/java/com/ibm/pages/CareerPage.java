@@ -85,17 +85,22 @@ public class CareerPage extends BasePage{
 	
 	public String test01(String JobTitle, String JobCategory, String ExperienceLevel, String View, String Experience, String PreferredLangauge, String PrimarySkills, String PrimaryCountry) throws InterruptedException 
 	{
-		driver.findElement(By.xpath("//input[contains(text(),'Accept Default')]")).click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		try{
 		btnExperienceProfessionals.click();
 		}
 		catch(Exception e)
 		{
-			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();",btnExperienceProfessionals);
 		}
 		elementUtil.waitForElementToBeVisible(btnSeeAllJobs);
+		try{
 		btnSeeAllJobs.click();
+		}
+		catch(Exception e)
+		{
+			js.executeScript("arguments[0].click();",btnSeeAllJobs);
+		}
 		elementUtil.waitForElementToBeVisible(inputJobCategory);
 		Select select = new Select(inputJobCategory);
 		select.selectByVisibleText(JobCategory);
