@@ -134,7 +134,14 @@ public class CareerPage extends BasePage{
             }
         }
         elementUtil.waitForElementToBeVisible(btnApplyNow);
-        btnApplyNow.click();
+		try{
+			btnApplyNow.click();
+		}
+		catch(Exception e)
+		{
+			js.executeScript("arguments[0].click();",btnApplyNow);
+		}
+        
         elementUtil.waitForElementToBeVisible(inputResumeUpload);
 
 
