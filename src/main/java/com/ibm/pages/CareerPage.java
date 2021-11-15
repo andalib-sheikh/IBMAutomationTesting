@@ -85,6 +85,7 @@ public class CareerPage extends BasePage{
 	
 	public String test01(String JobTitle, String JobCategory, String ExperienceLevel, String View, String Experience, String PreferredLangauge, String PrimarySkills, String PrimaryCountry) throws InterruptedException 
 	{
+		driver.findElement(By.xpath("//div[contains(text(),'"Accept Default"')]")).click();
 		try{
 		btnExperienceProfessionals.click();
 		}
