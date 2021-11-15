@@ -85,7 +85,14 @@ public class CareerPage extends BasePage{
 	
 	public String test01(String JobTitle, String JobCategory, String ExperienceLevel, String View, String Experience, String PreferredLangauge, String PrimarySkills, String PrimaryCountry) throws InterruptedException 
 	{
+		try{
 		btnExperienceProfessionals.click();
+		}
+		catch(Exception e)
+		{
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();",btnExperienceProfessionals);
+		}
 		elementUtil.waitForElementToBeVisible(btnSeeAllJobs);
 		btnSeeAllJobs.click();
 		elementUtil.waitForElementToBeVisible(inputJobCategory);
