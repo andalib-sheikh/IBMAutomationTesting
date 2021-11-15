@@ -112,7 +112,7 @@ public class CareerPage extends BasePage{
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).perform();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//p[contains(text(),'"+JobTitle+"')]")).click();
+		driver.findElement(By.xpath("//p[contains(text(),'Automation')]")).click();
 		Thread.sleep(1000);
 		String mainWindowHandle = driver.getWindowHandle();
 		Set<String> windowHandles=driver.getWindowHandles();
