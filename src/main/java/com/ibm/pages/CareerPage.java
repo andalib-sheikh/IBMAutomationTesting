@@ -108,7 +108,7 @@ public class CareerPage extends BasePage{
 		select.selectByVisibleText(ExperienceLevel);
 		select = new Select(inputView);
 		select.selectByVisibleText(View);
-		inputJobTitle.sendKeys(JobTitle);
+		inputJobTitle.sendKeys("Automation");
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).perform();
 		Thread.sleep(2000);
